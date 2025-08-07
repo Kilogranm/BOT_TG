@@ -4,10 +4,7 @@ from sqlalchemy import select
 
 import os
 
-async def reg_admin():
-    ADMIN = int(os.getenv("ADMIN", "0").strip('"'))
-    print(ADMIN)
-    return ADMIN
+ADMIN = int(os.getenv("ADMIN", "0").strip('"'))
 
 async def set_user(message):
     async with async_session() as session:
