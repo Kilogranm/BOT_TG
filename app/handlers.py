@@ -16,7 +16,7 @@ from app.database.requests import get_users
 from logger import logger
 
 
-ADMIN = int(os.getenv("ADMIN", "0").strip('"'))
+ADMIN = int(os.getenv("ADMIN"))
 
 class Input(StatesGroup):
     query = State()
