@@ -4,7 +4,7 @@ from sqlalchemy import select
 
 import os
 
-ADMIN = int(os.getenv("ADMIN", "0").strip('"'))
+ADMIN = int(os.getenv("ADMIN"))
 
 async def set_user(message):
     async with async_session() as session:
