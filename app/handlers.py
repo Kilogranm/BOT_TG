@@ -16,10 +16,7 @@ from app.database.requests import get_users
 from logger import logger
 
 
-async def reg_admin():
-    ADMIN = int(os.getenv("ADMIN", "0").strip('"'))
-    print(ADMIN)
-    return ADMIN
+ADMIN = int(os.getenv("ADMIN", "0").strip('"'))
 
 class Input(StatesGroup):
     query = State()
@@ -42,7 +39,7 @@ async def start_handler(message: Message, state: FSMContext):
 
 @router.message(Command("user_info"))
 async def start_handler(message: Message):
-    if message.from_user.id != reg_admin(): return
+    if message.from_user.id != ADMIN: return
     all_users = await get_users()
     if not all_users: return await message.answer("No users")
 
