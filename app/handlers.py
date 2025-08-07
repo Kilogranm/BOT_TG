@@ -17,6 +17,7 @@ from logger import logger
 
 
 ADMIN = int(os.getenv("ADMIN", "0").strip('"'))
+print(ADMIN)
 
 class Input(StatesGroup):
     query = State()
