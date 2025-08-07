@@ -5,9 +5,10 @@ from app.database.models import async_main
 
 import os
 
+TOKEN = os.getenv("TOKEN")
 
 # Создаём бота
-bot = Bot(token=os.getenv("TOKEN"))
+bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
 
