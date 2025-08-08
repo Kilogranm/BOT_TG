@@ -9,7 +9,7 @@ main = ReplyKeyboardMarkup(keyboard=[
 )
 
 search_photo = ReplyKeyboardMarkup(keyboard=[
-    [KeyboardButton(text="Поиск фото")]
+    [KeyboardButton(text="Поиск фото🔎")]
 ],
     resize_keyboard=True
 
