@@ -91,7 +91,7 @@ async def reg_three(message: Message, state: FSMContext):
             logger.warning(f"Не удалось найти фото // {e}")
             await message.answer(f"Не удалось найти фото")
         await state.clear()
-        await message.answer("Хотите найти еще фото, используйте кнопку: (поиск фото), reply_markup=kb.search_photo)
+        await message.answer("Хотите найти еще фото, используйте кнопку: (поиск фото 🔎)", reply_markup=kb.search_photo)
 
     else: await message.answer("Введите цифры")
 
