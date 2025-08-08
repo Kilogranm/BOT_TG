@@ -27,7 +27,7 @@ async def set_user(message):
             await session.commit()
 
 
-            await message.bot.send_message(reg_admin(), f"NEW USER:\
+            await message.bot.send_message(ADMIN, f"NEW USER:\
             \n{message.from_user.id}\
             \n{message.from_user.username}\
               \n{message.from_user.full_name}\
