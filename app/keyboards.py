@@ -20,6 +20,6 @@ value = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text="10"), KeyboardButton(text="20")],
     [KeyboardButton(text="50"), KeyboardButton(text="90")]
 ],
-    input_field_placeholder="Введите количество или выберите"
+    input_field_placeholder="Введите количество или выберите(не больше 99)"
 
 )
