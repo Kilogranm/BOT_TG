@@ -58,7 +58,7 @@ async def start_handler(message: Message):
         \ndata registration: {user.data}")
         await message.answer(text)
 
-@router.message(F.text == "Поиск фото")
+@router.message(F.text == "Поиск фото 🔎")
 async def reg_one(message: Message, state: FSMContext):
     if await state.get_state() == AwaitInput.await_input:
         data = await state.get_data()
