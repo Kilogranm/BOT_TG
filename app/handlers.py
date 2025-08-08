@@ -33,7 +33,12 @@ router = Router()
 async def start_handler(message: Message, state: FSMContext):
     if await state.get_state() == AwaitInput.await_input: return
     await state.clear()
-    await message.answer("привет я бот который найдет тебе фотографии, чтобы начать нажми: поиск фото", reply_markup=kb.search_photo)
+    await message.answer(
+    "👋 Привет! Я — бот, который найдет тебе фотографии по твоему запросу.\n"
+    "Нажми на кнопку *Поиск фото*, чтобы начать 🔎",
+    reply_markup=kb.search_photo
+)
+
     await set_user(message)
 
 
@@ -86,7 +91,7 @@ async def reg_three(message: Message, state: FSMContext):
             logger.warning(f"Не удалось найти фото // {e}")
             await message.answer(f"Не удалось найти фото")
         await state.clear()
-        await message.answer("Хотите найти еще фото, используйте кнопку (поиск фото), reply_markup=kb.search_photo)
+        await message.answer("Хотите найти еще фото, используйте кнопку: (поиск фото), reply_markup=kb.search_photo)
 
     else: await message.answer("Введите цифры")
 
