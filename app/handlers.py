@@ -77,7 +77,7 @@ async def reg_three(message: Message, state: FSMContext):
         data = await state.get_data()
         query = data["query"]
         value = data["value"]
-        if value >= 99: value = 99
+        value = min(int(value), 99)
         await state.set_state(AwaitInput.await_input)
         await message.answer(f"ожидайте пока идет поиск: \n{query} \n{value}")
         try:
